@@ -1,0 +1,6 @@
+.my-image img{ 
+    min-height: 45px;
+    max-height: 45px;
+    width: 45px;
+    object-fit: cover;
+}

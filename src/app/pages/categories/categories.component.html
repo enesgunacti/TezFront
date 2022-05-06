@@ -1,0 +1,29 @@
+<h3 *ngIf="categories; else noCategory"></h3>
+<div class="row">
+  <ng-template #noCategory>
+    <div class="alert alert-primary" role="alert">
+      Lütfen bir kategori ekleyiniz
+    </div>
+  </ng-template>
+
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table">
+        <thead class="text-primary">
+          <th>Kategori Id</th>
+          <th>Kategori İsmi</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let category of categories">
+            <td>
+              {{ category.categoryId }}
+            </td>
+            <td>
+              {{ category.categoryName }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

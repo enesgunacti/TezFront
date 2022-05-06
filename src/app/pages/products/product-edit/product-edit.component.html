@@ -1,0 +1,36 @@
+
+<h3>Ürün Güncelle</h3>
+
+<form [formGroup]="productEditForm"  class="form-groupx"> 
+
+<div class="form-goup">
+  <input type="text" id="productName" name="productName" formControlName="productName" class="form-control" placeholder="Ürün Adı">
+  <!-- <div  class="alert alert-danger" *ngIf="productAddForm.get('productName').hasError('required') && productAddForm.get('productName').dirty">Ürün Adı Zorunludur</div>  -->
+</div>
+<br>
+<div class="form-group">
+  <input type="text" id="productDescription" name="productDescription" formControlName="productDescription" class="form-control" placeholder="Ürün Detay">
+  <!-- <div  class="alert alert-danger" *ngIf="productAddForm.get('productDescription').hasError('required') && productAddForm.get('productDescription').dirty">Ürün Adı Zorunludur</div>  -->
+</div>
+
+  <div class="form-groupx">    
+  <input type="text"  name="productPicture" formControlName="productPicture" class="form-control" placeholder="Ürün Resim Link"> 
+</div>
+  <br>
+
+<div class="form-group"> 
+  <select class="form-control" formControlName="categoryId" requried id="categoryId" name="categoryId">
+      <option *ngFor="let category of categories" [value]="category.categoryId" >
+          {{category.categoryName}}
+      </option>
+  </select> 
+   <!-- <div
+  *ngIf="productAddForm.get('categoryId').hasError('required') && productAddForm.get('categoryId').touched"
+  class="alert alert-danger"
+>
+  Kategori Gereklidir
+</div> -->
+</div>
+<button type="button" (click)="edit()" class="btn btn-primary"> Ürün Güncelle</button>
+
+</form>

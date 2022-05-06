@@ -1,0 +1,37 @@
+<html>
+  <body>
+    <main class="form-signin">
+      <form [formGroup]="loginForm">
+        <h1 class="h3 mb-3 fw-normal">Sisteme Giriş</h1>
+
+        <div class="form-floating">
+          <label for="floatingInput">E-Posta</label>
+          <span></span>
+          <input
+            formControlName="email"
+            type="email"
+            class="form-control"
+            id="floatingInput"
+            placeholder="name@example.com"
+          />
+        </div>
+        <div class="form-floating">
+          <br />
+          <label for="floatingPassword">Şifre</label>
+
+          <input
+          formControlName="password"
+            type="password"
+            class="form-control"
+            id="floatingPassword"
+            placeholder="Şifrenizi Giriniz"
+          />
+        </div>
+
+        <button (click)="goToPage('products')" class="w-100 btn btn-lg btn-primary" (click)="login()">
+          Giriş Yap
+        </button>
+      </form>
+    </main>
+  </body>
+</html>
