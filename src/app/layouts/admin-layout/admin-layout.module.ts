@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import {RouterModule } from '@angular/router';
+import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 
 import { AdminLayoutRoutes } from "./admin-layout.routing";
@@ -26,8 +26,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AuthInterceptor } from "app/interceptors/auth.interceptor";
 import { DataTablesModule } from "angular-datatables";
 import { ProductEditComponent } from "app/pages/products/product-edit/product-edit.component";
-
-
+import { CategoriesAddComponent } from "app/pages/categories/categories-add/categories-add.component";
+import { CategoriesUpdateComponent } from "app/pages/categories/categories-update/categories-update.component";
 
 @NgModule({
   imports: [
@@ -37,24 +37,27 @@ import { ProductEditComponent } from "app/pages/products/product-edit/product-ed
     NgbModule,
     ReactiveFormsModule,
     DataTablesModule,
-    HttpClientModule
-    
+    HttpClientModule,
   ],
   declarations: [
     UserComponent,
     TableComponent,
-    ProductsComponent,
+
     CategoriesComponent,
+    CategoriesAddComponent,
+    CategoriesUpdateComponent,
+
     UsersComponent,
     ContactsComponent,
     DocumentsComponent,
     MenusComponent,
     SlidersComponent,
     LoginComponent,
+
+    ProductsComponent,
     ProductFilterPipe,
     ProductAddComponent,
-    ProductEditComponent
-    
+    ProductEditComponent,
   ],
 
   providers: [

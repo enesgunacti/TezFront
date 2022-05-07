@@ -1,28 +1,38 @@
-import { Component,OnInit } from '@angular/core';
-import { CategoryService } from 'app/services/category.service';
-import { Category } from './category';
-
+import { Component, OnInit } from "@angular/core";
+import { CategoryService } from "app/services/category.service";
+import { ToastrService } from "ngx-toastr";
+import { Category } from "./category";
 
 @Component({
-    moduleId: module.id,
-    selector: 'categories-cmp',
-    templateUrl: 'categories.component.html',
-    providers:[CategoryService]
+  moduleId: module.id,
+  selector: "categories-cmp",
+  templateUrl: "categories.component.html",
+  providers: [CategoryService],
 })
-export class CategoriesComponent implements OnInit{
+export class CategoriesComponent implements OnInit {
+  constructor(
+    private categoryService: CategoryService,
+    private toasterService: ToastrService
+  ) {}
 
-    constructor(private categoryService:CategoryService){}
+  categories: Category[];
 
-    
-    categories:Category[];
-    
-    ngOnInit() {
-       this.getCategories();
+  ngOnInit() {
+    this.getCategories();
+  }
+
+  getCategories() {
+    this.categoryService.getKategoriler().subscribe((response) => {
+      this.categories = response.data;
+    });
+  }
+
+  delete(id: number) {
+    if (confirm("Silmek istediğinize emin misiniz ?")) {
+      this.categoryService.deleteCategory(id).subscribe((response) => {
+        this.ngOnInit();
+        this.toasterService.success(response.message, "Silme İşlemi");
+      });
     }
-
-    getCategories(){
-        this.categoryService.getKategoriler().subscribe((response) => {
-          this.categories = response.data;
-        });
-      }
+  }
 }

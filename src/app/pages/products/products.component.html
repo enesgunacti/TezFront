@@ -12,8 +12,10 @@
 </div>
 <div class="row">
   <div class="col-md-12">
-    <a routerLink="/product-add" class="btn btn-primary float-left">Ürün Ekle</a>
-</div>
+    <a routerLink="/product-add" class="btn btn-primary float-left"
+      >Ürün Ekle</a
+    >
+  </div>
 </div>
 <div class="row">
   <ng-template #noProduct>
@@ -23,16 +25,15 @@
   </ng-template>
 
   <div class="card-body">
-    <div class="table-responsive" style="overflow: hidden;">
+    <div class="table-responsive" style="overflow: hidden">
       <table class="table mt-3">
         <thead class="text-primary">
-          <th style="width: 35%;">Ürün İsmi</th>
-          <th style="width: 40%;">Ürün Açıklaması</th>
-          <th style="width: 10%;">Ürün Resmi</th>
-          <th style="width: 15%;">İşlemler</th>
+          <th style="width: 35%">Ürün İsmi</th>
+          <th style="width: 40%">Ürün Açıklaması</th>
+          <th style="width: 10%">Ürün Resmi</th>
+          <th style="width: 15%">İşlemler</th>
         </thead>
         <tbody>
-          
           <tr *ngFor="let product of products | productFilter: filterText">
             <td>
               {{ product.productName }}
@@ -42,16 +43,31 @@
             </td>
             <td>
               <img
-                class="card-img-top" style="width:45px; min-height:45px;max-height:45px; object-fit:cover"
+                class="card-img-top"
+                style="
+                  width: 45px;
+                  min-height: 45px;
+                  max-height: 45px;
+                  object-fit: cover;
+                "
                 [src]="product.productPicture"
                 alt="..."
               />
             </td>
             <td>
-              <!-- <i  (click)="deleteProduct(product.productId)" class="fa fa-trash" >sss</i> -->
-              <button  class="btn btn-danger" (click)="delete(product.productId)">Sil</button>&nbsp;&nbsp;
-               <!-- <button class="btn btn-info" (click)="update(product.productId)">Güncelle </button> -->
-               <a routerLink="/product/{{product.productId}}/guncelle" class="btn btn-success"> DÜZENLE</a>
+              <button
+                class="btn btn-danger"
+                (click)="delete(product.productId)"
+              >
+                Sil</button
+              >&nbsp;&nbsp;
+
+              <a
+                routerLink="/product/{{ product.productId }}/guncelle"
+                class="btn btn-success"
+              >
+                DÜZENLE</a
+              >
             </td>
           </tr>
         </tbody>
@@ -59,5 +75,3 @@
     </div>
   </div>
 </div>
-
-

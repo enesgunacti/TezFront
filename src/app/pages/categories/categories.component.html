@@ -6,12 +6,19 @@
     </div>
   </ng-template>
 
+  <div class="col-md-12">
+    <a routerLink="/categories-add" class="btn btn-primary float-left"
+      >Kategori Ekle</a
+    >
+  </div>
+
   <div class="card-body">
-    <div class="table-responsive">
-      <table class="table">
+    <div class="table-responsive" style="overflow: hidden">
+      <table class="table mt-3">
         <thead class="text-primary">
-          <th>Kategori Id</th>
-          <th>Kategori İsmi</th>
+          <th style="width: 35%">Kategori Id</th>
+          <th style="width: 35%">Kategori İsmi</th>
+          <th style="width: 30%">İşlemler</th>
         </thead>
         <tbody>
           <tr *ngFor="let category of categories">
@@ -21,9 +28,75 @@
             <td>
               {{ category.categoryName }}
             </td>
+            <td>
+              <button
+                class="btn btn-danger"
+                (click)="delete(category.categoryId)"
+              >
+                Sil</button
+              >&nbsp;&nbsp;
+
+              <a
+                class="btn btn-success"
+                routerLink="/category/{{ category.categoryId }}/guncelle"
+              >
+                DÜZENLE</a
+              >
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
 </div>
+
+<!-- <div class="card-body">
+    <div class="table-responsive" style="overflow: hidden">
+      <table class="table mt-3">
+        <thead class="text-primary">
+          <th style="width: 35%">Ürün İsmi</th>
+          <th style="width: 40%">Ürün Açıklaması</th>
+          <th style="width: 10%">Ürün Resmi</th>
+          <th style="width: 15%">İşlemler</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products | productFilter: filterText">
+            <td>
+              {{ product.productName }}
+            </td>
+            <td>
+              {{ product.productDescription }}
+            </td>
+            <td>
+              <img
+                class="card-img-top"
+                style="
+                  width: 45px;
+                  min-height: 45px;
+                  max-height: 45px;
+                  object-fit: cover;
+                "
+                [src]="product.productPicture"
+                alt="..."
+              />
+            </td>
+            <td>
+              <button
+                class="btn btn-danger"
+                (click)="delete(product.productId)"
+              >
+                Sil</button
+              >&nbsp;&nbsp;
+
+              <a
+                routerLink="/product/{{ product.productId }}/guncelle"
+                class="btn btn-success"
+              >
+                DÜZENLE</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div> -->

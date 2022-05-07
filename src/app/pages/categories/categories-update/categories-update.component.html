@@ -1,0 +1,18 @@
+<h3>Kategori Güncelle</h3>
+
+<form [formGroup]="categoryEditForm" class="form-groupx">
+  <div class="form-goup">
+    <input
+      type="text"
+      id="categoryName"
+      name="categoryName"
+      formControlName="categoryName"
+      class="form-control"
+      placeholder="Kategori Adı"
+    />
+  </div>
+
+  <button type="button" (click)="edit()" class="btn btn-primary">
+    Kategori Güncelle
+  </button>
+</form>
