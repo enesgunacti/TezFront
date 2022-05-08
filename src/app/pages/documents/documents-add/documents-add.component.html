@@ -1,0 +1,18 @@
+<h3>Yeni Belge Ekle</h3>
+
+<form [formGroup]="documentAddForm" class="form-group">
+  <div class="form-group">
+    <input
+      type="text"
+      id="documentName"
+      name="documentName"
+      formControlName="documentName"
+      class="form-control"
+      placeholder="Belge Yolu"
+    />
+  </div>
+  <br />
+  <button type="button" (click)="add()" class="btn btn-primary">
+    Belge Ekle
+  </button>
+</form>

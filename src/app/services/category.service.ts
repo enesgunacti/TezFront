@@ -37,7 +37,7 @@ export class CategoryService {
     );
   }
 
-  editProduct(category: Category): Observable<ResponseModel> {
+  editCategory(category: Category): Observable<ResponseModel> {
     return this.http.post<ResponseModel>(this.apiUrl + "/update", category);
   }
 }

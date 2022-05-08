@@ -1,0 +1,18 @@
+<h3>Yeni Slider Ekle</h3>
+
+<form [formGroup]="sliderAddForm" class="form-groupx">
+  <div class="form-goup">
+    <input
+      type="text"
+      id="sliderPicture"
+      name="sliderPicture"
+      formControlName="sliderPicture"
+      class="form-control"
+      placeholder="Slider Resim"
+    />
+  </div>
+  <br />
+  <button type="button" (click)="add()" class="btn btn-primary">
+    Kategori Ekle
+  </button>
+</form>

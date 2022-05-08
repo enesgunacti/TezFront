@@ -1,1 +1,51 @@
-DOCUMENTS COMPONENT
+<h3 *ngIf="documents; else noDocument"></h3>
+<div class="row">
+  <ng-template #noDocument>
+    <div class="alert alert-primary" role="alert">
+      Lütfen bir Belge ekleyiniz
+    </div>
+  </ng-template>
+
+  <div class="col-md-12">
+    <a routerLink="/documents-add" class="btn btn-primary float-left"
+      >Belge Ekle</a
+    >
+  </div>
+
+  <div class="card-body">
+    <div class="table-responsive" style="overflow: hidden">
+      <table class="table mt-3">
+        <thead class="text-primary">
+          <th style="width: 35%">Document Id</th>
+          <th style="width: 35%">Belge İsmi</th>
+          <th style="width: 30%">İşlemler</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let document of documents">
+            <td>
+              {{ document.documentId }}
+            </td>
+            <td>
+              {{ document.documentName }}
+            </td>
+            <td>
+              <button
+                class="btn btn-danger"
+                (click)="delete(document.documentId)"
+              >
+                Sil</button
+              >&nbsp;&nbsp;
+
+              <a
+                class="btn btn-success"
+                routerLink="/document/{{ document.documentId }}/guncelle"
+              >
+                DÜZENLE</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

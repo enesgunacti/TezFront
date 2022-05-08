@@ -1,0 +1,18 @@
+<h3>Belge Güncelle</h3>
+
+<form [formGroup]="documentEditForm" class="form-group">
+  <div class="form-goup">
+    <input
+      type="text"
+      id="documentName"
+      name="documentName"
+      formControlName="documentName"
+      class="form-control"
+      placeholder="Belge Yolu"
+    />
+  </div>
+
+  <button type="button" (click)="edit()" class="btn btn-primary">
+    Belge Güncelle
+  </button>
+</form>

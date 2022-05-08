@@ -22,8 +22,12 @@ export class ProductsComponent implements OnInit {
   filterText = "";
 
   ngOnInit() {
-    this.productService.getProducts().subscribe((data) => {
-      this.products = data;
+    this.getProducts();
+  }
+
+  getProducts() {
+    this.productService.getÜrünler().subscribe((response) => {
+      this.products = response.data;
     });
   }
 

@@ -1,0 +1,18 @@
+<h3>Slider Güncelle</h3>
+
+<form [formGroup]="sliderEditForm" class="form-group">
+  <div class="form-group">
+    <input
+      type="text"
+      id="sliderPicture"
+      name="sliderPicture"
+      formControlName="sliderPicture"
+      class="form-control"
+      placeholder="Slider Resmi"
+    />
+  </div>
+
+  <button type="button" (click)="edit()" class="btn btn-primary">
+    Slider Güncelle
+  </button>
+</form>

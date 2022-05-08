@@ -46,7 +46,7 @@ export class CategoriesUpdateComponent implements OnInit {
   edit() {
     if (this.categoryEditForm.valid) {
       let categoryModel = Object.assign({}, this.categoryEditForm.value);
-      this.categoryService.editProduct(categoryModel).subscribe(
+      this.categoryService.editCategory(categoryModel).subscribe(
         (response) => {
           this.router.navigate(["categories"]);
           this.toasterService.success(

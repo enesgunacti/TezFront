@@ -1,1 +1,58 @@
-SLIDERS COMPONENT
+<h3 *ngIf="sliders; else noSlider"></h3>
+<div class="row">
+  <ng-template #noSlider>
+    <div class="alert alert-primary" role="alert">
+      Lütfen bir Slider ekleyiniz
+    </div>
+  </ng-template>
+
+  <div class="col-md-12">
+    <a routerLink="/sliders-add" class="btn btn-primary float-left"
+      >Slider Ekle</a
+    >
+  </div>
+
+  <div class="card-body">
+    <div class="table-responsive" style="overflow: hidden">
+      <table class="table mt-3">
+        <thead class="text-primary">
+          <th style="width: 35%">Slider Id</th>
+          <th style="width: 35%">Slider Resim</th>
+          <th style="width: 30%">İşlemler</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let slider of sliders">
+            <td>
+              {{ slider.sliderId }}
+            </td>
+            <td>
+              <img
+                class="card-img-top"
+                style="
+                  width: 45px;
+                  min-height: 45px;
+                  max-height: 45px;
+                  object-fit: cover;
+                "
+                [src]="slider.sliderPicture"
+                alt="..."
+              />
+            </td>
+            <td>
+              <button class="btn btn-danger" (click)="delete(slider.sliderId)">
+                Sil</button
+              >&nbsp;&nbsp;
+
+              <a
+                class="btn btn-success"
+                routerLink="/slider/{{ slider.sliderId }}/guncelle"
+              >
+                DÜZENLE</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

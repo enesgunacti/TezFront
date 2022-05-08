@@ -28,6 +28,12 @@ import { DataTablesModule } from "angular-datatables";
 import { ProductEditComponent } from "app/pages/products/product-edit/product-edit.component";
 import { CategoriesAddComponent } from "app/pages/categories/categories-add/categories-add.component";
 import { CategoriesUpdateComponent } from "app/pages/categories/categories-update/categories-update.component";
+import { ContactsAddComponent } from "app/pages/contacts/contacts-add/contacts-add.component";
+import { ContactsUpdateComponent } from "app/pages/contacts/contacts-update/contacts-update.component";
+import { SlidersAddComponent } from "app/pages/sliders/sliders-add/sliders-add.component";
+import { SlidersUpdateComponent } from "app/pages/sliders/sliders-update/sliders-update.component";
+import { DocumentsAddComponent } from "app/pages/documents/documents-add/documents-add.component";
+import { DocumentsUpdateComponent } from "app/pages/documents/documents-update/documents-update.component";
 
 @NgModule({
   imports: [
@@ -40,24 +46,32 @@ import { CategoriesUpdateComponent } from "app/pages/categories/categories-updat
     HttpClientModule,
   ],
   declarations: [
-    UserComponent,
-    TableComponent,
-
     CategoriesComponent,
     CategoriesAddComponent,
     CategoriesUpdateComponent,
 
-    UsersComponent,
     ContactsComponent,
+    ContactsAddComponent,
+    ContactsUpdateComponent,
+
     DocumentsComponent,
-    MenusComponent,
+    DocumentsAddComponent,
+    DocumentsUpdateComponent,
+
     SlidersComponent,
-    LoginComponent,
+    SlidersAddComponent,
+    SlidersUpdateComponent,
 
     ProductsComponent,
     ProductFilterPipe,
     ProductAddComponent,
     ProductEditComponent,
+
+    LoginComponent,
+    UsersComponent,
+    MenusComponent,
+    UserComponent,
+    TableComponent,
   ],
 
   providers: [

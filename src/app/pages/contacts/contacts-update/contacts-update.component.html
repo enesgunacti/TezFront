@@ -1,0 +1,29 @@
+<h3>İletişim Bilgisi Güncelle</h3>
+
+<form [formGroup]="contactEditForm" class="form-groupx">
+  <div class="form-goup">
+    <input
+      type="text"
+      id="contactName"
+      name="contactName"
+      formControlName="contactName"
+      class="form-control"
+      placeholder="İletişim Başlık"
+    />
+  </div>
+
+  <div class="form-goup">
+    <input
+      type="text"
+      id="contactDetail"
+      name="contactDetail"
+      formControlName="contactDetail"
+      class="form-control"
+      placeholder="İletişim İçerik"
+    />
+  </div>
+
+  <button type="button" (click)="edit()" class="btn btn-primary">
+    İletişim Bilgisi Güncelle
+  </button>
+</form>
