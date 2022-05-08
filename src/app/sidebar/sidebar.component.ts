@@ -18,9 +18,6 @@ export const ROUTES: RouteInfo[] = [
     class: "",
   },
   { path: "/sliders", title: "SLİDERLAR", icon: "nc-image", class: "" },
-
-  { path: "/user", title: "User Profile", icon: "nc-single-02", class: "" },
-  { path: "/table", title: "Table List", icon: "nc-tile-56", class: "" },
 ];
 
 @Component({
