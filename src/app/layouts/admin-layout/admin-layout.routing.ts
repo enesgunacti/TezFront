@@ -25,12 +25,23 @@ import { DocumentsComponent } from "../../pages/documents/documents.component";
 import { DocumentsAddComponent } from "app/pages/documents/documents-add/documents-add.component";
 import { DocumentsUpdateComponent } from "app/pages/documents/documents-update/documents-update.component";
 
+import { HizmetlerComponent } from "app/pages/hizmetler/hizmetler.component";
+import { HizmetlerAddComponent } from "app/pages/hizmetler/hizmetler-add/hizmetler-add.component";
+import { HizmetlerUpdateComponent } from "app/pages/hizmetler/hizmetler-update/hizmetler-update.component";
+
 export const AdminLayoutRoutes: Routes = [
   { path: "categories", component: CategoriesComponent },
   { path: "categories-add", component: CategoriesAddComponent },
   {
     path: "category/:categoryId/guncelle",
     component: CategoriesUpdateComponent,
+  },
+
+  { path: "hizmetler", component: HizmetlerComponent },
+  { path: "hizmetler-add", component: HizmetlerAddComponent },
+  {
+    path: "hizmet/:hizmetId/guncelle",
+    component: HizmetlerUpdateComponent,
   },
 
   { path: "contacts", component: ContactsComponent },

@@ -70,7 +70,7 @@ export class CategoriesUpdateComponent implements OnInit {
         }
       );
     } else {
-      this.toasterService.error("Eksik Ürün Bilgileri.", "Uyarı");
+      this.toasterService.error("Eksik Kategori Bilgileri.", "Uyarı");
     }
     return;
   }

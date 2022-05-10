@@ -18,6 +18,8 @@ export const ROUTES: RouteInfo[] = [
     class: "",
   },
   { path: "/sliders", title: "SLİDERLAR", icon: "nc-image", class: "" },
+
+  { path: "/hizmetler", title: "Hizmetler", icon: "nc-pin-3", class: "" },
 ];
 
 @Component({

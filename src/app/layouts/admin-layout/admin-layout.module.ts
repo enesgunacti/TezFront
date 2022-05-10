@@ -33,6 +33,9 @@ import { SlidersUpdateComponent } from "app/pages/sliders/sliders-update/sliders
 import { LoginComponent } from "../../pages/login/login.component";
 import { MenusComponent } from "../../pages/menus/menus.component";
 import { UsersComponent } from "../../pages/users/users.component";
+import { HizmetlerAddComponent } from "app/pages/hizmetler/hizmetler-add/hizmetler-add.component";
+import { HizmetlerComponent } from "app/pages/hizmetler/hizmetler.component";
+import { HizmetlerUpdateComponent } from "app/pages/hizmetler/hizmetler-update/hizmetler-update.component";
 
 @NgModule({
   imports: [
@@ -65,6 +68,10 @@ import { UsersComponent } from "../../pages/users/users.component";
     ProductFilterPipe,
     ProductAddComponent,
     ProductEditComponent,
+
+    HizmetlerAddComponent,
+    HizmetlerComponent,
+    HizmetlerUpdateComponent,
 
     LoginComponent,
     UsersComponent,

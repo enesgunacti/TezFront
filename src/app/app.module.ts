@@ -14,9 +14,10 @@ import { AppRoutes } from "./app.routing";
 
 import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
 import { HttpClientModule } from "@angular/common/http";
+import { MainpageComponent } from "./mainpage/mainpage.component";
 
 @NgModule({
-  declarations: [AdminLayoutComponent, AppComponent],
+  declarations: [AdminLayoutComponent, AppComponent, MainpageComponent],
   imports: [
     BrowserAnimationsModule,
     HttpClientModule,

@@ -1,0 +1,66 @@
+<h3 *ngIf="hizmetler; else noHizmet"></h3>
+<div class="row">
+  <ng-template #noHizmet>
+    <div class="alert alert-primary" role="alert">
+      Lütfen bir Hizmet ekleyiniz
+    </div>
+  </ng-template>
+
+  <div class="col-md-12">
+    <a routerLink="/hizmetler-add" class="btn btn-primary float-left"
+      >Hizmet Ekle</a
+    >
+  </div>
+
+  <div class="card-body">
+    <div class="table-responsive" style="overflow: hidden">
+      <table class="table mt-3">
+        <thead class="text-primary">
+          <th style="width: 20%">Hizmet Adı</th>
+          <th style="width: 20%">Hizmet Detayı</th>
+          <th style="width: 20%">Hizmet Özet</th>
+          <th style="width: 20%">Hizmet Resmi</th>
+          <th style="width: 20%">İşlemler</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let hizmet of hizmetler">
+            <td>
+              {{ hizmet.hizmetAdi }}
+            </td>
+            <td>
+              {{ hizmet.hizmetOzet }}
+            </td>
+            <td>
+              {{ hizmet.hizmetDetay }}
+            </td>
+            <td>
+              <img
+                class="card-img-top"
+                style="
+                  width: 45px;
+                  min-height: 45px;
+                  max-height: 45px;
+                  object-fit: cover;
+                "
+                [src]="hizmet.hizmetResmi"
+                alt="..."
+              />
+            </td>
+            <td>
+              <button class="btn btn-danger" (click)="delete(hizmet.hizmetId)">
+                Sil</button
+              >&nbsp;&nbsp;
+
+              <a
+                class="btn btn-success"
+                routerLink="/hizmet/{{ hizmet.hizmetId }}/guncelle"
+              >
+                DÜZENLE</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
