@@ -20,7 +20,7 @@ export class CategoriesUpdateComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.createCategoryEditForm();
+    this.createHizmetEditForm();
     this.activatedRoute.params.subscribe((params) => {
       if (params["categoryId"]) {
         this.getCategory(params["categoryId"]);
@@ -28,7 +28,7 @@ export class CategoriesUpdateComponent implements OnInit {
     });
   }
 
-  createCategoryEditForm() {
+  createHizmetEditForm() {
     this.categoryEditForm = this.formBuilder.group({
       categoryName: ["", Validators.required],
     });

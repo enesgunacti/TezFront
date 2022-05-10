@@ -72,7 +72,7 @@ export class ContactsUpdateComponent implements OnInit {
         }
       );
     } else {
-      this.toasterService.error("Eksik Ürün Bilgileri.", "Uyarı");
+      this.toasterService.error("Eksik İletişim Bilgileri.", "Uyarı");
     }
     return;
   }
