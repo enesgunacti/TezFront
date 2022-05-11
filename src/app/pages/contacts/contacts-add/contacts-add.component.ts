@@ -25,6 +25,7 @@ export class ContactsAddComponent implements OnInit {
     this.contactAddForm = this.formBuilder.group({
       contactName: ["", Validators.required],
       contactDetail: ["", Validators.required],
+      contactPicture: ["", Validators.required],
     });
   }
   add() {
@@ -52,7 +53,7 @@ export class ContactsAddComponent implements OnInit {
         }
       );
     } else {
-      this.toasterService.error("Eksik Ürün Bilgileri.", "Uyarı");
+      this.toasterService.error("Eksik İletişim Bilgileri.", "Uyarı");
     }
     return;
   }

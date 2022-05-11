@@ -89,6 +89,16 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+#mainNav .navbar-brand img {
+  height: 8rem!important;
+}
+
+#mainNav.navbar-shrink {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #555!important;
+}
+
 hr {
   margin: 1rem 0;
   color: inherit;

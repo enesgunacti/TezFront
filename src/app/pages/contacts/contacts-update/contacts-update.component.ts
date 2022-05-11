@@ -32,6 +32,7 @@ export class ContactsUpdateComponent implements OnInit {
     this.contactEditForm = this.formBuilder.group({
       contactName: ["", Validators.required],
       contactDetail: ["", Validators.required],
+      contactPicture: ["", Validators.required],
     });
   }
 
@@ -41,6 +42,7 @@ export class ContactsUpdateComponent implements OnInit {
         contactId: [response.data?.contactId || "", ""],
         contactName: [response.data?.contactName || "", ""],
         contactDetail: [response.data?.contactDetail || "", ""],
+        contactPicture: [response.data?.contactPicture || "", ""],
       });
     });
   }
