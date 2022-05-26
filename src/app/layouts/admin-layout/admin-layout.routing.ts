@@ -29,41 +29,112 @@ import { HizmetlerComponent } from "app/pages/hizmetler/hizmetler.component";
 import { HizmetlerAddComponent } from "app/pages/hizmetler/hizmetler-add/hizmetler-add.component";
 import { HizmetlerUpdateComponent } from "app/pages/hizmetler/hizmetler-update/hizmetler-update.component";
 
+import { HakkimizdaComponent } from "app/pages/hakkimizda/hakkimizda.component";
+import { HakkimizdaAddComponent } from "app/pages/hakkimizda/hakkimizda-add/hakkimizda-add.component";
+import { HakkimizdaUpdateComponent } from "app/pages/hakkimizda/hakkimizda-update/hakkimizda-update.component";
+
 export const AdminLayoutRoutes: Routes = [
-  { path: "categories", component: CategoriesComponent },
-  { path: "categories-add", component: CategoriesAddComponent },
+  {
+    path: "categories",
+    component: CategoriesComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: "categories-add",
+    component: CategoriesAddComponent,
+    canActivate: [LoginGuard],
+  },
   {
     path: "category/:categoryId/guncelle",
     component: CategoriesUpdateComponent,
+    canActivate: [LoginGuard],
   },
 
-  { path: "hizmetler", component: HizmetlerComponent },
-  { path: "hizmetler-add", component: HizmetlerAddComponent },
+  {
+    path: "hizmetler",
+    component: HizmetlerComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: "hizmetler-add",
+    component: HizmetlerAddComponent,
+    canActivate: [LoginGuard],
+  },
   {
     path: "hizmet/:hizmetId/guncelle",
     component: HizmetlerUpdateComponent,
+    canActivate: [LoginGuard],
   },
 
-  { path: "contacts", component: ContactsComponent },
-  { path: "contacts-add", component: ContactsAddComponent },
-  { path: "contact/:contactId/guncelle", component: ContactsUpdateComponent },
+  {
+    path: "hakkimizda",
+    component: HakkimizdaComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: "hakkimizda-add",
+    component: HakkimizdaAddComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: "hakkimizda/:hakkimizdaId/guncelle",
+    component: HakkimizdaUpdateComponent,
+    canActivate: [LoginGuard],
+  },
 
-  { path: "documents", component: DocumentsComponent },
-  { path: "documents-add", component: DocumentsAddComponent },
+  { path: "contacts", component: ContactsComponent, canActivate: [LoginGuard] },
+  {
+    path: "contacts-add",
+    component: ContactsAddComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: "contact/:contactId/guncelle",
+    component: ContactsUpdateComponent,
+    canActivate: [LoginGuard],
+  },
+
+  {
+    path: "documents",
+    component: DocumentsComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: "documents-add",
+    component: DocumentsAddComponent,
+    canActivate: [LoginGuard],
+  },
   {
     path: "document/:documentId/guncelle",
     component: DocumentsUpdateComponent,
+    canActivate: [LoginGuard],
   },
 
-  { path: "sliders", component: SlidersComponent },
-  { path: "sliders-add", component: SlidersAddComponent },
-  { path: "slider/:sliderId/guncelle", component: SlidersUpdateComponent },
+  { path: "sliders", component: SlidersComponent, canActivate: [LoginGuard] },
+  {
+    path: "sliders-add",
+    component: SlidersAddComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: "slider/:sliderId/guncelle",
+    component: SlidersUpdateComponent,
+    canActivate: [LoginGuard],
+  },
 
-  { path: "products", component: ProductsComponent, canActivate: [LoginGuard] }, // en son tüm componentler için kullanılması gerekiyor....//
-  { path: "product-add", component: ProductAddComponent },
-  { path: "product/:productId/guncelle", component: ProductEditComponent },
+  { path: "products", component: ProductsComponent, canActivate: [LoginGuard] },
+  {
+    path: "product-add",
+    component: ProductAddComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: "product/:productId/guncelle",
+    component: ProductEditComponent,
+    canActivate: [LoginGuard],
+  },
 
-  { path: "login", component: LoginComponent },
-  { path: "menus", component: MenusComponent },
-  { path: "users", component: UsersComponent },
+  { path: "login", component: LoginComponent, canActivate: [LoginGuard] },
+  { path: "menus", component: MenusComponent, canActivate: [LoginGuard] },
+  { path: "users", component: UsersComponent, canActivate: [LoginGuard] },
 ];
